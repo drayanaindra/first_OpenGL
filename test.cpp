@@ -2,15 +2,15 @@
 #include <GL/glu.h> 
 #include <GL/glut.h> 
 void init(void) { 
-     GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 }; //parameter cahaya specular 
+     GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 }; 
      GLfloat mat_shininess[] = { 100.0 }; //parameter shininess 
-     GLfloat light_position[] = { 1.0, 0.5, 1.0, 1.0 }; //parameter posisi pencahayaan 
-     glClearColor (0.0, 0.0, 0.0, 0.0); glShadeModel (GL_SMOOTH); //mengaktifkan shade model 
+     GLfloat light_position[] = { 1.0, 0.5, 1.0, 1.0 }; 
+     glClearColor (0.0, 0.0, 0.0, 0.0); glShadeModel (GL_SMOOTH); 
      glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular); 
      glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess); 
      glLightfv(GL_LIGHT0, GL_POSITION, light_position); 
-     glEnable(GL_LIGHTING); //mengaktifkan pencahayaan 
-     glEnable(GL_LIGHT0); //mengaktifkan sumber cayaha 
+     glEnable(GL_LIGHTING); 
+     glEnable(GL_LIGHT0); 
      glEnable(GL_NORMALIZE); glShadeModel(GL_SMOOTH); //add positioned light 
      GLfloat lightColor0[] = {0.7f, 0.7f, 0.7f, 1.0f}; GLfloat lightPos0[] = {5.0f, 7.0f, 5.0f, 1.0f}; 
      glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0); glLightfv(GL_LIGHT0, GL_POSITION, lightPos0); glPopMatrix(); 
@@ -18,8 +18,31 @@ void init(void) {
 void display(void) { 
      const double t= glutGet(GLUT_ELAPSED_TIME) /1000.0; 
      const double a = t*90.0, b = t/2, c = t/10; glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-     glEnable(GL_COLOR_MATERIAL); //mengaktifkan fungsi untuk memberikan warna pada material
-     glColorMaterial(GL_FRONT, GL_DIFFUSE); //parameter-parameter fungsi warna material glPushMatrix(); glColor3f(0.2, 1.0, 0.7); glRotatef(90.0, 1.0, 0.0, 0.0); glutSolidSphere (0.4, 100, 16); glPopMatrix(); glPushMatrix(); glColor3f(0.5, 1.0, 0.5); //glScalef(1.5, 0.5, 0.0); glTranslatef(0.5, 0.5, -5.0); glRotatef(45.0, 0.0, 1.0, 0.7); glutSolidCube (0.6); glPopMatrix(); glPushMatrix(); glColor3f(0.5, 0.5, 1.0); glTranslatef(1.0, 0.0, 0.0); glRotatef(10.0, 0.0, 1.0, 0.7); glutWireCube (0.5); glPopMatrix(); glPushMatrix(); glColor3f(1.0, 1.0, 0.5); glTranslatef(-1.0, 1.0, 0.0); glRotatef(0.0, 0.0, 1.0, 0.7); glutWireTeapot (0.4); glPopMatrix(); glPushMatrix();
+     glEnable(GL_COLOR_MATERIAL); 
+     glColorMaterial(GL_FRONT, GL_DIFFUSE); //parameter-parameter fungsi warna material 
+     glPushMatrix(); glColor3f(0.2, 1.0, 0.7); 
+     glRotatef(90.0, 1.0, 0.0, 0.0); 
+     glutSolidSphere (0.4, 100, 16); 
+     glPopMatrix(); glPushMatrix(); 
+     glColor3f(0.5, 1.0, 0.5); //
+     glScalef(1.5, 0.5, 0.0); 
+     glTranslatef(0.5, 0.5, -5.0); 
+     glRotatef(45.0, 0.0, 1.0, 0.7); 
+     glutSolidCube (0.6); 
+     glPopMatrix(); 
+     glPushMatrix(); 
+     glColor3f(0.5, 0.5, 1.0); 
+     glTranslatef(1.0, 0.0, 0.0); 
+     glRotatef(10.0, 0.0, 1.0, 0.7); 
+     glutWireCube (0.5); 
+     glPopMatrix(); 
+     glPushMatrix(); 
+     glColor3f(1.0, 1.0, 0.5); 
+     glTranslatef(-1.0, 1.0, 0.0); 
+     glRotatef(0.0, 0.0, 1.0, 0.7); 
+     glutWireTeapot (0.4); 
+     glPopMatrix(); 
+     glPushMatrix();
      glColor3f(1.0, 0.0, 0.5); 
      glTranslatef(1.0, 1.0, 0.0); 
      glRotatef(-a, 0.0, 1.0, 0.0); 
